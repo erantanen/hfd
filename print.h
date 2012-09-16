@@ -2,10 +2,10 @@
 #define PRINT_H
 
 /**********************************************************
- * print_help: Prints help message.                       *
+ * print_usage: Prints help message.                       *
  **********************************************************/
 
-void print_help(void);
+void print_usage(void);
 
 /**********************************************************
  * print_version: Prints Version.                         *
