@@ -1,6 +1,26 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include "print.h"
+
+char  version[40] = "hfd v000.1 17sep12 by Ed Rantanen";
+
+
+/*****************************************
+ *   hfd -> hex file dump
+ *
+ * This program reads in data, and does
+ * a display depending on conditionals 
+ * requested. 
+ *
+ * by: Ed Rantanen
+ * on: 17 Sep 2012
+ *
+ * updates and documentation 
+ *      at github.com/erantanen/hfd
+ *
+ ****************************************/
+
 
 
 
@@ -16,6 +36,8 @@ void main(int argc, char *argv[])
   char *argv_entry;
   char *file_in;
   FILE *filehandle_in;
+
+
 
 /*************************
  * parsing argv elements *
@@ -43,7 +65,7 @@ void main(int argc, char *argv[])
             exit(1);
 
         } else if(strcmp(argv[1], "-v") == 0) {
-            printf("blah v\n");
+            printf("\n%s \n\n", version);
             exit(1);
 
         } else if(strcmp(argv[1], "-c") == 0) {
