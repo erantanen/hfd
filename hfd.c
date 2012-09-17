@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-
+#include <string.h>
 
 
 
@@ -8,10 +8,12 @@ void main(int argc, char *argv[])
 {
 /* initial declarations */
   int incr;
+  char *i;
   int dataBits = 16;
   int numberofElements = 1;
   int elementGroup = 0;
   unsigned char  n[dataBits];
+  char *argv_entry;
   char *file_in;
   FILE *filehandle_in;
 
@@ -20,17 +22,47 @@ void main(int argc, char *argv[])
  *************************/
 
    if(argc != 2) {
-      printf("In correct usage,\n \' hfd -help \'\n Try for a better understanding of how to use hfd.\n");
+      printf("\n 1 In correct usage,\n \' hfd -help \'\n");
+      printf("Try for a better understanding of how to use hfd.\n\n");
       exit(1);
     }
 
+
+   /* prep for switches */
+
+       argv_entry = argv[1];
+       i = strchr(argv_entry, '-');
+
     
+        if(strcmp(argv[1], "-u") == 0) {
+            printf("blah u\n");
+            exit(1);
 
-   if(argv[1] != "-") {
-       filehandle_in = fopen( argv[1], "r");;
+        } else if(strcmp(argv[1], "-ps") == 0) {
+            printf("blah ps\n");
+            exit(1);
+
+        } else if(strcmp(argv[1], "-v") == 0) {
+            printf("blah v\n");
+            exit(1);
+
+        } else if(strcmp(argv[1], "-c") == 0) {
+            printf("blah c\n");
+            exit(1);
+
+        } else if(strcmp(argv[1], "-h") == 0) {
+            printf("blah h\n");
+            exit(1);
+
+        } else if((filehandle_in = fopen( argv[1], "r")) == NULL) {
+            printf("\n 2 In correct usage,\n \' hfd -help \'\n");
+            printf("Try for a better understanding of how to use hfd.\n\n");
+            exit(1);
+
+        }
+
        
-    }       
-
+   
  
  while( numberofElements != 0) {
 
