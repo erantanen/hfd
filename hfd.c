@@ -28,14 +28,18 @@ void main(int argc, char *argv[])
 {
 /* initial declarations */
   int incr;
+  int  b;
   char *i;
   int dataBits = 16;
   int numberofElements = 1;
   int elementGroup = 0;
+  int ret_sprintf;
   unsigned char  n[dataBits];
   char *argv_entry;
   char *file_in;
+  char  print_method_buffer[30];
   FILE *filehandle_in;
+
 
 
 
@@ -43,7 +47,7 @@ void main(int argc, char *argv[])
  * parsing argv elements *
  *************************/
 
-   if(argc != 2) {
+   if(argc < 2 || argc > 3) {
       printf("\n 1 In correct usage,\n \' hfd -help \'\n");
       printf("Try for a better understanding of how to use hfd.\n\n");
       exit(1);
@@ -57,8 +61,15 @@ void main(int argc, char *argv[])
 
     
         if(strcmp(argv[1], "-u") == 0) {
-            printf("blah u\n");
-            exit(1);
+            printf("blah u \n");
+             
+               if((filehandle_in = fopen( argv[2], "r")) == NULL) {
+                 printf("\n 2 In correct usage,\n \' hfd -help \'\n");
+                 printf("Try for a better understanding of how to use hfd.\n\n");
+                 exit(1);
+                } else {
+                     filehandle_in = fopen( argv[2], "r");
+                }
 
         } else if(strcmp(argv[1], "-ps") == 0) {
             printf("blah ps\n");
@@ -84,7 +95,7 @@ void main(int argc, char *argv[])
         }
 
        
-   
+  printf("2 ich\n"); 
  
  while( numberofElements != 0) {
 
@@ -92,10 +103,12 @@ void main(int argc, char *argv[])
     
  /* begin internal print block */
 
+  
    printf("\n %06x:", elementGroup);
-
+   
    for(incr = 0; incr < dataBits ; incr+=2){
 	   printf(" %02X%02X ", n[incr], n[incr+1]);
+        
 
     } 
 
@@ -104,7 +117,7 @@ void main(int argc, char *argv[])
     for(incr = 0; incr < dataBits ; incr++){
 
      /*  usable ascii symbols are 33 to 126 */
-      if ( n[incr] < 32 || n[incr] > 126 ){
+      if ( n[incr] < 32 || n[incr] > 127 ){
           printf(".");
         }
      else 
@@ -114,7 +127,7 @@ void main(int argc, char *argv[])
 
     }
 
-   elementGroup = elementGroup + 16;
+   elementGroup = elementGroup + dataBits;
  }
 
 /* end of internal print block */
