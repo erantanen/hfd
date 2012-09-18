@@ -62,7 +62,9 @@ void main(int argc, char *argv[])
     
         if(strcmp(argv[1], "-u") == 0) {
             printf("blah u \n");
-             
+              
+                #define PRINT(F,S)  printf(" %02X%02X ", n[incr], n[incr+1])
+                        
                if((filehandle_in = fopen( argv[2], "r")) == NULL) {
                  printf("\n 2 In correct usage,\n \' hfd -help \'\n");
                  printf("Try for a better understanding of how to use hfd.\n\n");
@@ -107,7 +109,9 @@ void main(int argc, char *argv[])
    printf("\n %06x:", elementGroup);
    
    for(incr = 0; incr < dataBits ; incr+=2){
-	   printf(" %02X%02X ", n[incr], n[incr+1]);
+	 /*  printf(" %02X%02X ", n[incr], n[incr+1]);*/
+
+           PRINT(n[incr], n[incr+1]);
         
 
     } 
