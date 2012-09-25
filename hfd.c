@@ -31,7 +31,7 @@ int  main(int argc, char *argv[])
   int numberofElements = 1;
   int elementGroup = 0;       /*number of bits read */
   unsigned char  n[dataBits]; /* holder of data */
-  char  *file_in;
+/*  char  *file_in;*/
   char  *print_method;        /* print fmt for block */
   char  *l_fmt;               /* print fmt for lines */
   FILE  *filehandle_in;
@@ -90,7 +90,10 @@ int  main(int argc, char *argv[])
                 }   
 
         } else if(strcmp(argv[1], "-h") == 0) {
-            system("man ./hfd_man");
+           int systemresult =  system("man ./hfd_man");
+           if(systemresult == -1) {
+              printf("Unable to locate help file\n");
+             }
             exit(1);
 
         } else if((filehandle_in = fopen( argv[1], "r")) == NULL) {
@@ -133,5 +136,6 @@ int  main(int argc, char *argv[])
     printf("\n\n"); /* simple clean up after run */
 
 fclose(filehandle_in);
- 
+
+return(0); 
 }
