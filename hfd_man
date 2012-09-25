@@ -1,0 +1,71 @@
+.TH hfd 1 "September 2012" "Manual page for hfd"
+.\"
+.\" 25st September 2012
+.\" Man page author:
+.\"    Ed Rantanen <er2054@ship.edu> 
+.\"    
+.SH NAME
+.I hfd
+\- Builds a hexdump of an input file.
+.SH SYNOPSIS
+.B hfd
+\-h[elp]
+.br
+.B hfd
+[options] [infile]
+.br
+
+.SH DESCRIPTION
+.I hfd
+creates a hex dump of a given file.
+
+
+.SH OPTIONS
+.TP
+.IR \-b 
+Switch to bits (binary digits) dump, rather than hexdump.
+.TP
+.IR \-c " "cols 
+format
+.RI < cols >
+octets per line. Default 16 (\-i: 12, \-ps: 30, \-b: 6). Max 256.
+.TP
+.IR \-h 
+print a summary of available commands and exit.  No hex dumping is performed.
+.TP
+.IR \-ps 
+output in postscript continuous hexdump style. Also known as plain hexdump
+style.
+.TP
+.I \-u
+use upper case hex letters. Default is lower case.
+.TP
+.IR \-v 
+show version string.
+
+.SH EXAMPLES
+.PP
+.br
+
+
+
+.br
+.SH WARNINGS
+
+
+.br
+.SH VERSION
+This manual page documents hfd version 1.5
+.SH AUTHOR
+.br
+Ed Rantanen
+<rantanen_ed@yahoo.com>
+.PP
+This software is based on xxd by:
+.br
+(c) 1990-1997 by Juergen Weigert
+.br
+<jnweiger@informatik.uni\-erlangen.de>
+.LP
+
+

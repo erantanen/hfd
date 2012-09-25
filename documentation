@@ -1,0 +1,97 @@
+                                                                     
+                                                                     
+                                                                     
+                                             
+************************************************************		
+
+			Documentation 
+
+************************************************************
+
+Project 1: 	Partial Revers Engineer xxd
+		
+Programmers:	Ed Rantanen
+
+Instructor: 	Dr. Lee
+ 
+
+Course: 	CSC520
+
+CREATED: 	20 Sep 2012
+
+PLATFORM: 	Clipper
+
+SHELL: 		TCSH
+
+LANGUAGE 	 C
+
+For Latest Version:
+	https://github.com/erantanen/hfd
+
+Aim:
+	To create a near replica of xxd. 
+
+*******************************
+
+Problem Description:
+First problem was to understand what was actully being read from a binary file, and how it tranlated into hex. 
+
+*******************************
+
+Detailed Description of Solution:
+The solution was undertanding the grouping within a binary file such as "<89>" or other elements that are enclosed with "< >" and how this fit a specific type. This type turned out to be unsigned char.  
+*******************************
+
+
+
+Algorithm:
+
+while( numberofElements != 0) {
+
+  numberofElements = fread(n, sizeof(char), dataBits, filehandle_in);
+    
+ /* begin internal print block */
+     
+     PRINT_Num_Elements(l_fmt, elementGroup); /* line numbering */
+   
+     for(incr = 0; incr < dataBits ; incr+=2){  PRINT(print_method, n[incr], n[incr+1]); } 
+
+     printf("\t");
+
+     for(incr = 0; incr < dataBits ; incr++){
+
+     /*  usable ascii symbols are 33 to 126 */
+      if ( n[incr] < 32 || n[incr] > 127 ){
+          printf(".");
+        }
+      else 
+       {
+         printf("%c", (char)n[incr]);
+       }
+    }
+
+   elementGroup = elementGroup + dataBits;
+ }
+
+/* end of while */
+
+    printf("\n\n"); /* simple clean up after run */
+
+fclose(filehandle_in);
+ 
+}
+
+*******************************
+
+Analysis of Algorithm and Output:
+
+At first iteration this is a very simple process, working on the concept of a stream, and minumal storage of data. As a stream process the size of the input file is not critical, but in later iterations this may change due to the required storage of the output file. 
+
+*******************************
+
+
+
+
+
+
+

@@ -1,0 +1,53 @@
+hfd(1)                                                                  hfd(1)
+
+
+
+NNAAMMEE
+       _h_f_d - Builds a hexdump of an input file.
+
+SSYYNNOOPPSSIISS
+       hhffdd -h[elp]
+       hhffdd [options] [infile]
+
+
+DDEESSCCRRIIPPTTIIOONN
+       _h_f_d creates a hex dump of a given file.
+
+
+
+OOPPTTIIOONNSS
+       _-_b     Switch to bits (binary digits) dump, rather than hexdump.
+
+       _-_c _c_o_l_s
+              format  <_c_o_l_s> octets per line. Default 16 (-i: 12, -ps: 30, -b:
+              6). Max 256.
+
+       _-_h     print a summary of available commands and exit.  No hex  dumping
+              is performed.
+
+       _-_p_s    output  in  postscript  continuous  hexdump style. Also known as
+              plain hexdump style.
+
+       _-_u     use upper case hex letters. Default is lower case.
+
+       _-_v     show version string.
+
+
+EEXXAAMMPPLLEESS
+WWAARRNNIINNGGSS
+VVEERRSSIIOONN
+       This manual page documents hfd version 1.5
+
+AAUUTTHHOORR
+       Ed Rantanen <rantanen_ed@yahoo.com>
+
+       This software is based on xxd by:
+       (c) 1990-1997 by Juergen Weigert
+       <jnweiger@informatik.uni-erlangen.de>
+
+
+
+
+
+
+Manual page for hfd             September 2012                          hfd(1)
