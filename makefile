@@ -14,15 +14,12 @@ OBJ1=$(SRC1:.c=.o)
 P1=hfd
 
 
-all: $(OBJ1) $(P1) 
+all:  $(P1) 
 	@echo created programs $(P1)  ...
-
-$(OBJ1): $(SRC1)
-	$(CC) $(CFLAGS) -c $<
 
 
 	
-$(P1): $(OBJ1)
+$(P1): $(SRC1)
 	$(CC) $(CFLAGS) -o $@ $<
 	
 
