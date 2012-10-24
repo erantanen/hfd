@@ -1,6 +1,6 @@
 .TH hfd 1 "September 2012" "Manual page for hfd"
 .\"
-.\" 25st September 2012
+.\" 24st Oct 2012
 .\" Man page author:
 .\"    Ed Rantanen <er2054@ship.edu> 
 .\"    
@@ -21,6 +21,9 @@ creates a hex dump of a given file.
 
 
 .SH OPTIONS
+.TP
+.IR \-I
+Use for command line input.
 .TP
 .IR \-d 
 Switch to decimal dump, rather than hexdump.
