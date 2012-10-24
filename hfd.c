@@ -62,6 +62,18 @@ int  main(int argc, char *argv[])
                      filehandle_in = fopen( argv[2], "r");
                 }
 
+        } else if(strcmp(argv[1], "-b") == 0) {
+
+            print_method = " %3d %3d";
+
+               if((filehandle_in = fopen( argv[2], "r")) == NULL) {
+                 printf("\n 2 In correct usage,\n \' hfd -help \'\n");
+                 printf("Try for a better understanding of how to use hfd.\n\n");
+                 exit(1);
+                } else {
+                     filehandle_in = fopen( argv[2], "r");
+                }
+
         } else if(strcmp(argv[1], "-ps") == 0) {
                          
             print_method = "%02x%02x";
