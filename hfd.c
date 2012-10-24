@@ -3,7 +3,8 @@
 #include <string.h>
 
 
-char  version[40] = "hfd v001.1 20sep12 by Ed Rantanen";
+char  version[40] = "hfd v001.5 24oct12 by Ed Rantanen";
+
 #define PRINT(print_method,elemnt1,elemnt2)  printf(print_method, n[incr], n[incr+1])
 #define PRINT_Num_Elements(l_fmt, elementGroup) printf(l_fmt, elementGroup)
 
