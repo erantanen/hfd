@@ -63,9 +63,19 @@ int  main(int argc, char *argv[])
                      filehandle_in = fopen( argv[2], "r");
                 }
 
-        } else if(strcmp(argv[1], "-d") == 0) {
+           } else if(strcmp(argv[1], "-I") == 0) {
 
-            print_method = " %3d %3d";
+                   int c=0;
+                   printf("This is for command line input,\n enter data when finished hit return\n");
+                   while((c=getchar()) != 10){
+                     printf("%x ",c);
+                    }
+
+                   printf("\nThis is the end of command line input\n");
+                   exit(0); 
+           } else if(strcmp(argv[1], "-d") == 0) {
+
+             print_method = " %3d %3d";
 
                if((filehandle_in = fopen( argv[2], "r")) == NULL) {
                  printf("\n 2 In correct usage,\n \' hfd -help \'\n");
@@ -74,8 +84,7 @@ int  main(int argc, char *argv[])
                 } else {
                      filehandle_in = fopen( argv[2], "r");
                 }
-
-        } else if(strcmp(argv[1], "-ps") == 0) {
+         } else if(strcmp(argv[1], "-ps") == 0) {
                          
             print_method = "%02x%02x";
             l_fmt = "\n";               
