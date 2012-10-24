@@ -62,7 +62,7 @@ int  main(int argc, char *argv[])
                      filehandle_in = fopen( argv[2], "r");
                 }
 
-        } else if(strcmp(argv[1], "-b") == 0) {
+        } else if(strcmp(argv[1], "-d") == 0) {
 
             print_method = " %3d %3d";
 

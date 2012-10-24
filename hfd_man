@@ -22,8 +22,8 @@ creates a hex dump of a given file.
 
 .SH OPTIONS
 .TP
-.IR \-b 
-Switch to bits (binary digits) dump, rather than hexdump.
+.IR \-d 
+Switch to decimal dump, rather than hexdump.
 .TP
 .IR \-c " "cols 
 format
