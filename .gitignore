@@ -1,4 +1,5 @@
 *.o
+*.ls
 source.old
 *.swp
 a.out
