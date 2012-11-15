@@ -1,12 +1,23 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <getopt.h>
 
 
 char  version[40] = "hfd v001.6 24oct12 by Ed Rantanen";
 
 #define PRINT(print_method,elemnt1,elemnt2)  printf(print_method, n[incr], n[incr+1])
 #define PRINT_Num_Elements(l_fmt, elementGroup) printf(l_fmt, elementGroup)
+
+void print_k() {
+      printf("printing k from case switch\n");
+    }
+
+void print_default() {
+      printf("printing default from case switch\n");
+    }
+
+
 
 
 /*****************************************
@@ -17,7 +28,7 @@ char  version[40] = "hfd v001.6 24oct12 by Ed Rantanen";
  * requested. 
  *
  * by: Ed Rantanen
- * updated: 20 Sep 2012
+ * updated: 15 Nov 2012
  *
  * updates and documentation 
  *      at github.com/erantanen/hfd
@@ -27,6 +38,7 @@ char  version[40] = "hfd v001.6 24oct12 by Ed Rantanen";
 int  main(int argc, char *argv[])
 {
 /* initial declarations */
+  int option = 0;
   int incr;
   int dataBits = 16;
   int numberofElements = 1;
@@ -41,6 +53,17 @@ int  main(int argc, char *argv[])
 /*************************
  * parsing argv elements *
  *************************/
+
+   while((option=getopt(argc, argv, "k")) != -1) {
+            switch (option) {
+                  case 'k' : print_k();
+                      break;
+                    default: print_default();
+                      exit(0);
+             } //swtich
+    } //while
+
+
 
    if(argc < 2 || argc > 4) {
       printf("\n 1 In correct usage,\n \' hfd -help \'\n");

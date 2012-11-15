@@ -2,32 +2,6 @@
                                                                      
                                                                      
                                              
-************************************************************		
-
-			Readme 
-
-************************************************************
-
-Project 1: 	Partial Revers Engineer xxd
-		
-Programmers:	Ed Rantanen
-
-Instructor: 	Dr. Lee
- 
-
-Course: 	CSC520
-
-CREATED: 	20 Sep 2012
-
-PLATFORM: 	Clipper
-
-SHELL: 		TCSH
-
-LANGUAGE 	 C
-
-Aim:
-	To create a near replica of xxd. 
-
 
 
 TO COMPILE THE CODE

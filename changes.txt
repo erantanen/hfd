@@ -1,0 +1,6 @@
+
+// A place to keep track of dev or changes.
+
+
+
+2012 nov 15	:began getopt change over with initial variable.
