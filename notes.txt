@@ -1,1 +1,0 @@
-gcc -c -g -Wa,-a,-ad  hfd.c > hfd.ls
