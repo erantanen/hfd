@@ -1,26 +1,18 @@
 #
+#
+# makefile for hfd
+#
+# updated 29nov12
 
-#
-#MAKEFILE FOR hfd
-#
-#Date created 20 sep 2012
 
 
 CC=gcc
-CFLAGS=-Wall -O
-SRC1=hfd.c
-OBJ1=$(SRC1:.c=.o)
+CFLAGS= -Wall -I.
+DEPS = hfd_print.h
+OBJ = hfd.o hfd_print.o 
 
-P1=hfd
+%.o: %.c $(DEPS)
+	$(CC) -c -o $@ $< $(CFLAGS)
 
-
-all:  $(P1) 
-	@echo created programs $(P1)  ...
-
-
-	
-$(P1): $(SRC1)
-	$(CC) $(CFLAGS) -o $@ $<
-	
-
-
+hfd: $(OBJ)
+	gcc -o $@ $^ $(CFLAGS)
