@@ -26,6 +26,8 @@ char *file_out;
  * by: Ed Rantanen
  * updated: 15 Nov 2012
  *
+ *  test of dev
+ *
  * updates and documentation 
  *      at github.com/erantanen/hfd
  *
